@@ -3,7 +3,9 @@ import { ShoppingBag, Star, Download, Bookmark, BookOpen, FileText, Filter } fro
 import FadeIn from './FadeIn';
 
 const StoreSection = () => {
-  const products = [
+  const [activeFilter, setActiveFilter] = React.useState('All');
+  
+  const allProducts = [
     {
        title: "Business Mathematics",
        type: "PYQ + Solutions",
@@ -13,9 +15,10 @@ const StoreSection = () => {
        originalPrice: "₹99",
        rating: "4.9",
        sales: "2.1k",
-       imageColor: "bg-green-100",
-       accentColor: "text-green-600",
-       tags: ["Sem 1", "Solved"]
+       imageColor: "bg-blue/10",
+       accentColor: "text-blue",
+       tags: ["Sem 1", "Solved"],
+       category: "PYQs"
     },
     {
        title: "Data Structures (C++)",
@@ -26,9 +29,10 @@ const StoreSection = () => {
        originalPrice: "₹199",
        rating: "5.0",
        sales: "1.5k",
-       imageColor: "bg-orange-100",
-       accentColor: "text-orange-600",
-       tags: ["DSA", "Interview"]
+       imageColor: "bg-purple/10",
+       accentColor: "text-purple",
+       tags: ["DSA", "Interview"],
+       category: "Notes"
     },
     {
        title: "Microeconomics I",
@@ -39,9 +43,10 @@ const StoreSection = () => {
        originalPrice: "₹149",
        rating: "4.8",
        sales: "800+",
-       imageColor: "bg-orange-100",
-       accentColor: "text-orange-600",
-       tags: ["Sem 1", "Summary"]
+       imageColor: "bg-purple/10",
+       accentColor: "text-purple",
+       tags: ["Sem 1", "Summary"],
+       category: "Notes"
     },
      {
        title: "Corporate Law",
@@ -52,11 +57,16 @@ const StoreSection = () => {
        originalPrice: "₹129",
        rating: "4.7",
        sales: "1.2k",
-       imageColor: "bg-green-100",
-       accentColor: "text-green-600",
-       tags: ["Sem 2", "Law"]
+       imageColor: "bg-blue/10",
+       accentColor: "text-blue",
+       tags: ["Sem 2", "Law"],
+       category: "Notes"
     }
   ];
+
+  const filteredProducts = activeFilter === 'All' 
+    ? allProducts 
+    : allProducts.filter(p => p.category === activeFilter || p.type.includes(activeFilter));
 
   return (
     <section className="container mx-auto px-4 py-32 bg-white font-dm">
@@ -67,18 +77,28 @@ const StoreSection = () => {
               <span className="w-8 h-[2px] bg-inglu-black"></span>
               <span className="font-bold text-sm uppercase tracking-widest text-gray-500">Academic Resources</span>
            </div>
-          <h2 className="text-4xl md:text-6xl font-bold text-inglu-black tracking-tight leading-tight pb-4">
-            Top-Tier <span className="text-gray-400">Notes</span> & <br className="hidden md:block"/> 
-            <span className="text-blue-600">Past Year Papers</span>
+          <h2 className="text-4xl md:text-6xl font-display font-bold text-inglu-black tracking-wide leading-[0.9] pb-4 uppercase">
+            Top-Tier <span className="text-gray-300">Notes</span> & <br className="hidden md:block"/> 
+            <span className="text-blue">Past Year Papers</span>
           </h2>
         </div>
         
         <div className="flex items-center gap-4">
            {/* Filter Tabs Visual */}
            <div className="hidden md:flex bg-gray-100 p-1 rounded-full text-sm font-medium">
-              <button className="px-6 py-2 bg-white shadow-sm rounded-full text-inglu-black">All</button>
-              <button className="px-6 py-2 text-gray-500 hover:text-inglu-black transition">PYQs</button>
-              <button className="px-6 py-2 text-gray-500 hover:text-inglu-black transition">Notes</button>
+              {['All', 'PYQs', 'Notes'].map((filter) => (
+                <button 
+                  key={filter}
+                  onClick={() => setActiveFilter(filter)}
+                  className={`px-6 py-2 rounded-full transition-all ${
+                    activeFilter === filter 
+                      ? "bg-white text-inglu-black shadow-sm" 
+                      : "text-gray-500 hover:text-inglu-black"
+                  }`}
+                >
+                  {filter}
+                </button>
+              ))}
            </div>
            <button className="flex items-center gap-2 px-6 py-3 bg-inglu-black text-white font-bold rounded-full hover:bg-gray-900 transition-all shadow-xl">
              View Store
@@ -88,7 +108,7 @@ const StoreSection = () => {
 
        {/* Grid */}
        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product, i) => (
+          {filteredProducts.map((product, i) => (
              <FadeIn key={i} delay={i * 0.1}>
                  <div className="group bg-white rounded-3xl p-4 border border-gray-100 hover:border-gray-200 hover:shadow-2xl hover:shadow-gray-200/50 transition-all duration-300 cursor-pointer flex flex-col h-full">
                     
@@ -124,7 +144,7 @@ const StoreSection = () => {
                        <div className="mb-1 flex items-center gap-2 text-xs font-bold text-gray-400 uppercase tracking-wide">
                           {product.university} • {product.course}
                        </div>
-                       <h3 className="font-bold text-lg text-inglu-black leading-tight mb-2 group-hover:text-blue-600 transition-colors">
+                       <h3 className="font-bold text-lg text-inglu-black leading-tight mb-2 group-hover:text-blue transition-colors">
                           {product.title}
                        </h3>
                        <div className="text-sm text-gray-500 font-medium mb-4">{product.type}</div>
@@ -134,7 +154,7 @@ const StoreSection = () => {
                              <span className="text-gray-400 text-xs line-through font-medium">{product.originalPrice}</span>
                              <span className="text-xl font-bold text-inglu-black">{product.price}</span>
                           </div>
-                          <button className="h-10 px-4 rounded-xl bg-gray-50 text-inglu-black font-bold text-xs uppercase tracking-wide hover:bg-inglu-black hover:text-white transition-all flex items-center gap-2 group-hover:bg-blue-600 group-hover:text-white">
+                          <button className="h-10 px-4 rounded-xl bg-gray-50 text-inglu-black font-bold text-xs uppercase tracking-wide hover:bg-inglu-black hover:text-white transition-all flex items-center gap-2 group-hover:bg-blue group-hover:text-white">
                              Add <ShoppingBag className="w-3 h-3" />
                           </button>
                        </div>

@@ -22,7 +22,7 @@ const TestimonialsSection = () => {
       name: "RAHUL M.",
       sub: "Engineering Student",
       initial: "R",
-      color: "bg-yellow"
+      color: "bg-blue"
     }
   ];
 
@@ -37,8 +37,8 @@ const TestimonialsSection = () => {
          <h2 className="text-5xl md:text-7xl font-display font-bold text-inglu-black leading-[0.9] max-w-4xl mx-auto">
             TRUSTED <span className="relative inline-block">
               <span className="relative z-10">BY STUDENTS</span>
-              {/* Pink Brush stroke */}
-              <div className="absolute inset-0 bg-pink-300/30 -skew-y-1 -rotate-1 scale-110 z-0 rounded-md top-4 h-[60%]"></div>
+              {/* Purple Brush stroke */}
+              <div className="absolute inset-0 bg-purple/20 -skew-y-1 -rotate-1 scale-110 z-0 rounded-md top-4 h-[60%]"></div>
             </span> <br />
             ACROSS INDIA
         </h2>

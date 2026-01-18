@@ -16,8 +16,8 @@ const BrandStory = () => {
              <Quote className="w-12 h-12 text-blue-200 fill-current opacity-50 rotate-180" />
           </div>
 
-          <h2 className="font-serif italic text-3xl md:text-5xl lg:text-5xl text-gray-800 leading-snug mx-auto">
-            "Inglu isn't just a community, it's a <span className="!text-blue-600 font-bold not-italic px-1">Launchpad</span> for dreams. We bridge the gap between <span className="decoration-wavy decoration-purple-400 underline underline-offset-4 decoration-2 px-1 text-gray-900">classroom theory</span> and <span className="decoration-wavy decoration-blue-400 underline underline-offset-4 decoration-2 px-1 text-gray-900">corporate reality</span>."
+          <h2 className="font-display text-4xl md:text-6xl lg:text-7xl text-inglu-black leading-[0.9] mx-auto uppercase tracking-wide">
+            "Inglu isn't just a community, it's a <span className="text-blue px-1">Launchpad</span> for dreams. We bridge the gap between <span className="text-purple border-b-4 border-purple/30 px-1">classroom variable</span> and <span className="text-blue border-b-4 border-blue/30 px-1">corporate reality</span>."
           </h2>
 
           <div className="mt-12 flex items-center justify-center gap-4">

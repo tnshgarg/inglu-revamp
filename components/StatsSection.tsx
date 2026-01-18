@@ -17,18 +17,18 @@ const StatsSection = () => {
       value: "100K+",
       label: "INTERNSHIP OPPORTUNITIES",
       description: "Real-world experience for the next generation.",
-      color: "text-mint",
-      bgColor: "bg-mint/10",
-      iconColor: "text-mint"
+      color: "text-purple",
+      bgColor: "bg-purple/10",
+      iconColor: "text-purple"
     },
     {
       icon: Gamepad2,
       value: "1000+",
       label: "BRANDS PARTNERED",
       description: "Delivering youth marketing services to leaders.",
-      color: "text-orange-500",
-      bgColor: "bg-orange-500/10",
-      iconColor: "text-orange-500"
+      color: "text-blue",
+      bgColor: "bg-blue/10",
+      iconColor: "text-blue"
     },
     {
       icon: Heart,
@@ -36,8 +36,8 @@ const StatsSection = () => {
       label: "EVENTS ORGANIZED",
       description: "Inspiring young minds across the country.",
       color: "text-purple",
-      bgColor: "bg-pink-400/10",
-      iconColor: "text-pink-400"
+      bgColor: "bg-purple/10",
+      iconColor: "text-purple"
     }
   ];
 
@@ -66,5 +66,4 @@ const StatsSection = () => {
     </section>
   );
 };
-
 export default StatsSection;

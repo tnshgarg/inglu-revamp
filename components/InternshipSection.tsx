@@ -65,8 +65,8 @@ const InternshipSection = () => {
                  {[
                    { name: "Digital Marketing", count: "120+ Openings", color: "bg-blue/10 text-blue" },
                    { name: "Human Resources", count: "85+ Openings", color: "bg-purple/10 text-purple" },
-                   { name: "Web Development", count: "50+ Openings", color: "bg-orange-100 text-orange-500" },
-                   { name: "Content Writing", count: "200+ Openings", color: "bg-green-100 text-green-600" },
+                   { name: "Web Development", count: "50+ Openings", color: "bg-blue/10 text-blue" },
+                   { name: "Content Writing", count: "200+ Openings", color: "bg-purple/10 text-purple" },
                  ].map((domain, i) => (
                     <div key={i} className="flex items-center justify-between p-4 rounded-xl hover:bg-gray-50 transition-colors cursor-pointer group border border-transparent hover:border-gray-100">
                        <div className="flex items-center gap-4">

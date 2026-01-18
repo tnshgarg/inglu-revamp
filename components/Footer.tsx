@@ -9,7 +9,7 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-start gap-12 mb-32">
            {/* Contact Button & Address */}
             <div className="flex flex-col gap-6">
-                <h3 className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">INGLU GLOBAL</h3>
+                <h3 className="text-3xl font-display font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 tracking-wide">INGLU GLOBAL</h3>
                 <div className="flex flex-col gap-4 text-gray-400 font-medium">
                    <p>Connecting students with the best opportunities nationwide.</p>
                    <div className="flex flex-col gap-1">

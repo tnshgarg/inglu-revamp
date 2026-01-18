@@ -35,8 +35,8 @@ export default function Hero() {
 
            {/* Floating 'Sticker' Elements */}
            <FadeIn delay={0.6} className="absolute bottom-10 left-10 hidden md:block z-20">
-              <div className="animate-float-slow bg-yellow p-4 rounded-xl rotate-[-6deg] border-[3px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
-                <span className="font-display text-3xl uppercase">Fun!</span>
+              <div className="animate-float-slow bg-blue p-4 rounded-xl rotate-[-6deg] border-[3px] border-black shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]">
+                <span className="font-display text-3xl uppercase text-white">Fun!</span>
               </div>
            </FadeIn>
            
@@ -61,7 +61,7 @@ export default function Hero() {
               FASTEST <br/>
               <span className="relative inline-block z-10">
                   GROWING
-                  <span className="absolute -z-10 bottom-2 left-0 h-4 bg-yellow/80 -rotate-1 rounded-sm animate-highlight"></span>
+                  <span className="absolute -z-10 bottom-2 left-0 h-4 bg-purple/40 -rotate-1 rounded-sm animate-highlight"></span>
               </span> <br/>
               YOUTH COMMUNITY
             </h1>
